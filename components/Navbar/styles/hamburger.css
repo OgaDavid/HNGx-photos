@@ -19,7 +19,7 @@
 .rectangle {
   position: absolute;
   height: var(--rectangle-height);
-  background: #103FEF;
+  background: #202124;
   border-radius: var(--rectangle-radius);
   transition: transform var(--transition);
 }
@@ -58,7 +58,7 @@
   width: 400px;
   height: 280px;
   border-radius: 33px;
-  background: #1040ef;
+  background: #202124;
   opacity: 0;
   transform: scale(0);
   transform-origin: top left;

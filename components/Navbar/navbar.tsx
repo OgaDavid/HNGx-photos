@@ -21,7 +21,7 @@ export default function Navbar() {
     <>
       <header
         className={cn(
-          "fixed w-full md:shadow-md py-3 md:py-4",
+          "fixed w-full z-10 bg-white md:shadow-md py-3",
           !isOpen && "border-b shadow-sm border-b-gray-200 "
         )}
       >
@@ -79,13 +79,13 @@ export default function Navbar() {
 
         {/* MOBILE NAVIGATION */}
         <Container>
-          <div className="bg-white shadow-md rounded-lg transition duration-150">
+          <div className="bg-white z-[99999] shadow-md rounded-lg transition duration-150">
             <div className={cn(isOpen ? "block" : "hidden", "pl-4")}>
               <nav>
                 <ul className="text-sm py-10 flex flex-col items-start gap-5 font-medium">
                   <li>
                     <Link
-                      className="text-[#103FEF] border-b flex items-start gap-[2px] transition duration-300"
+                      className="text-[#103FEF] flex items-start gap-[2px] transition duration-300"
                       href="/gallery"
                     >
                       Gallery

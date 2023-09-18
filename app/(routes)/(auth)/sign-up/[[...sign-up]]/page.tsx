@@ -11,7 +11,7 @@ export default function Page() {
     <SignUp
       appearance={{
         elements: {
-          rootBox: "mx-auto",
+          rootBox: "mx-auto pt-[70px]",
         },
       }}
     />

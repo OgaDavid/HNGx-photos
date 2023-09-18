@@ -11,7 +11,7 @@ export default function Page() {
     <SignIn
       appearance={{
         elements: {
-          rootBox: "mx-auto",
+          rootBox: "mx-auto pt-[70px]",
         },
       }}
     />

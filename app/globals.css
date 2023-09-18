@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.waves {
+  background-image: url("../public/images/waves.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
