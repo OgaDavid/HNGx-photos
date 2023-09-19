@@ -1,7 +1,6 @@
 import Container from "@/components/ui/container";
-import React from "react";
 import cloudinary from "cloudinary";
-import CloudinaryImage from "./components/cloudinary-image";
+import MasnoryGrid from "./components/masnory-grid";
 
 export default async function GalleryPage() {
   // get images from Cloudinary
@@ -12,6 +11,8 @@ export default async function GalleryPage() {
     .execute()) as { resources: ImageResult[] };
 
   // console.log(imagesResult)
+
+
   return (
     <main>
       <Container>
@@ -20,13 +21,7 @@ export default async function GalleryPage() {
             Showing {imagesResult.resources.length} images
           </h1>
         </span>
-        <div className="grid grid-cols-1 gap-2 md:grid-cols-4">
-          {imagesResult.resources.map((image) => (
-            <div key={image.public_id} className="flex flex-col items-center">
-              <CloudinaryImage publicId={image.public_id} />
-            </div>
-          ))}
-        </div>
+        <MasnoryGrid imagesResult={imagesResult.resources} />
       </Container>
     </main>
   );

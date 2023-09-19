@@ -6,5 +6,5 @@ export default function CloudinaryImage({
 }: {
   publicId: string;
 }) {
-  return <CldImage width={200} height={200} className="rounded-md" src={publicId} alt="image" />;
+  return <CldImage width={250} height={200} className="rounded-md" src={publicId} alt="image" />;
 }

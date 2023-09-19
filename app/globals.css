@@ -74,3 +74,21 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* masnory styling */
+.my-masonry-grid {
+  display: -webkit-box; 
+  display: -ms-flexbox; 
+  display: flex;
+  margin-left: -15px; 
+  width: auto;
+}
+.my-masonry-grid_column {
+  padding-left: 15px; /* gutter size */
+  background-clip: padding-box;
+}
+
+/* Style your items */
+.my-masonry-grid_column > div { /* change div to reference your elements you put in <Masonry> */
+  margin-bottom: 15px;
+}
