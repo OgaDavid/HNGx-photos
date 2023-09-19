@@ -23,7 +23,7 @@ export default function HomePage() {
           <span>
             <Link
               className="py-3 transition duration-200 mt-8 flex items-center gap-2 font-medium text-white bg-[#103FEF] text-sm px-6 hover:bg-opacity-60 rounded-[4px]"
-              href="/sign-up"
+              href="/gallery"
             >
               Go to Gallery
               <ArrowRight className="w-4 h-4" />
