@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function HomePage() {
   return (
-    <main className="waves max-md:h-[100vh] relative pt-[61px]">
+    <main className="lines max-md:h-[100vh] relative pt-[61px]">
       <Container>
         <div className="flex justify-end">
           <Image
