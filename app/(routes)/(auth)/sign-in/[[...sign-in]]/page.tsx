@@ -21,7 +21,7 @@ export default function Page() {
         <h2 className="flex pb-1 items-center gap-1">
           Are you a test user? login with <ArrowRight className="w-3 h-3" />
         </h2>
-        <div className="">
+        <div>
           <p>Email: <span className="underline text-[#103FEF]">user@example.com</span></p>
           <p>Password: <span className="underline text-[#103FEF]">1Password</span></p>
         </div>

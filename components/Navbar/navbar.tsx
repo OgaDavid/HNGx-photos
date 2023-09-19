@@ -9,9 +9,11 @@ import Hamburger from "./hamburger";
 import { cn } from "@/lib/utils";
 import { ArrowUpRight } from "lucide-react";
 import { SignOutButton, useUser } from "@clerk/nextjs";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const { isLoaded, isSignedIn, user } = useUser();
+  const pathname = usePathname();
 
   const [isOpen, setIsOpen] = useState(false);
   function openNavigation() {
@@ -37,7 +39,12 @@ export default function Navbar() {
                   <li>
                     <Link
                       onClick={closeNavigation}
-                      className="hover:text-[#103FEF] text-[#202124] flex items-start gap-[2px] transition duration-300"
+                      className={cn(
+                        "hover:text-[#103FEF] flex items-start gap-[2px] transition duration-300",
+                        pathname.match("/gallery")
+                          ? "text-[#103FEF]"
+                          : "text-[#202124]"
+                      )}
                       href="/gallery"
                     >
                       Gallery
@@ -47,7 +54,12 @@ export default function Navbar() {
                   <li>
                     <Link
                       onClick={closeNavigation}
-                      className="hover:text-[#103FEF] text-[#202124] flex items-start gap-[2px] transition duration-300"
+                      className={cn(
+                        "hover:text-[#103FEF] text-[#202124] flex items-start gap-[2px] transition duration-300",
+                        pathname.match("/upload")
+                          ? "text-[#103FEF]"
+                          : "text-[#202124]"
+                      )}
                       href="/upload"
                     >
                       Upload
