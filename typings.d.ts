@@ -1,4 +1,5 @@
-type ImageResult = {
-    public_id: string
-    tags: string[]
-}
+type Image = {
+  id: number;
+  url: string;
+  tags: string[];
+};
