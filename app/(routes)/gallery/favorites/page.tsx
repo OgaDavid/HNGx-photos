@@ -1,7 +1,7 @@
 import Container from "@/components/ui/container";
 import cloudinary from "cloudinary";
-import MasnoryGrid from "../components/masnory-grid";
 import type { Metadata } from "next";
+import FavoritesList from "../components/favorites-list";
 
 export const metadata: Metadata = {
   title: "Favorites | Photos",
@@ -26,7 +26,7 @@ export default async function FavoritesPage() {
             Showing {favoritesResult.resources.length} images.
           </h1>
         </span>
-        <MasnoryGrid imagesResult={favoritesResult.resources} />
+        <FavoritesList initialImagesData={favoritesResult.resources}/>
       </Container>
     </main>
   );

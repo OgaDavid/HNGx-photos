@@ -9,6 +9,8 @@ import {
   DropResult,
 } from "react-beautiful-dnd";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import { ForceRefresh } from "@/components/force-refresh";
 
 export default function MasnoryGrid({
   imagesResult,
@@ -16,8 +18,10 @@ export default function MasnoryGrid({
   imagesResult: ImageResult[];
 }) {
   const [images, updateImages] = useState(imagesResult);
+  const router = useRouter();
 
   useEffect(() => {
+    // router.refresh();
     updateImages(images);
   }, [imagesResult]);
 
@@ -44,6 +48,8 @@ export default function MasnoryGrid({
   };
 
   return (
+    <>
+    <ForceRefresh />
     <DragDropContext onDragEnd={handleOnDragEnd}>
       <Droppable droppableId="masnory_grid">
         {(provided) => (
@@ -67,8 +73,17 @@ export default function MasnoryGrid({
                       className="flex relative group pb-[15px] transition duration-300 flex-col items-center"
                     >
                       <CloudinaryImage
+                        imageData={image}
                         tags={image.tags}
                         publicId={image.public_id}
+                        onUnheart={(unheartedImage) => {
+                          updateImages((currentResources) =>
+                            currentResources.filter(
+                              (resource) =>
+                                resource.public_id !== unheartedImage.public_id
+                            )
+                          );
+                        }}
                       />
                     </article>
                   )}
@@ -80,5 +95,6 @@ export default function MasnoryGrid({
         )}
       </Droppable>
     </DragDropContext>
+    </>
   );
 }
