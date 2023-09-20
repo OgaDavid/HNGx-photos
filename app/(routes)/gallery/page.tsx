@@ -2,7 +2,7 @@ import Container from "@/components/ui/container";
 import cloudinary from "cloudinary";
 import MasnoryGrid from "./components/masnory-grid";
 import type { Metadata } from "next";
-import { SearchCombobox } from "./components/search-combobox";
+import { SearchBar } from "./components/searchbar";
 
 export const metadata: Metadata = {
   title: "Gallery | Photos",
@@ -29,7 +29,7 @@ export default async function GalleryPage({
   return (
     <main>
       <Container>
-        <SearchCombobox initialValue={search} />
+        <SearchBar initialSearch={search} />
         <span>
           <h1 className="text-base py-5 md:text-xl font-semibold">
             Showing {imagesResult.resources.length} images.
