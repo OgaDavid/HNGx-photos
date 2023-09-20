@@ -46,7 +46,7 @@ export default function MasnoryGrid({
               className="my-masonry-grid"
               columnClassName="my-masonry-grid_column"
             >
-              {imagesResult.map((image, idx) => (
+              {images.map((image, idx) => (
                 <Draggable
                   key={image.public_id}
                   draggableId={idx.toString()}
