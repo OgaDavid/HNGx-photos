@@ -13,6 +13,7 @@ import {
   Draggable,
   DropResult,
 } from "react-beautiful-dnd";
+import { GripVertical } from "lucide-react";
 
 export default function Gallery() {
   const [tagName, setTagName] = useState("");
@@ -46,7 +47,7 @@ export default function Gallery() {
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          handleSearch(tagName);
+          handleSearch(tagName.toLowerCase());
           router.refresh();
         }}
       >
@@ -98,6 +99,7 @@ export default function Gallery() {
                         ref={provided.innerRef}
                         className="flex relative group pb-[15px] transition duration-300 flex-col items-center"
                       >
+                        <GripVertical className="absolute top-2 right-2 w-4 h-4 hidden group-hover:flex" />
                         <Image
                           className="w-[200px] h-[200px] object-cover rounded-md"
                           alt="image"
