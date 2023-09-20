@@ -9,7 +9,6 @@ import {
   DropResult,
 } from "react-beautiful-dnd";
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
 import { ForceRefresh } from "@/components/force-refresh";
 
 export default function MasnoryGrid({
@@ -18,10 +17,8 @@ export default function MasnoryGrid({
   imagesResult: ImageResult[];
 }) {
   const [images, updateImages] = useState(imagesResult);
-  const router = useRouter();
 
   useEffect(() => {
-    // router.refresh();
     updateImages(images);
   }, [imagesResult]);
 

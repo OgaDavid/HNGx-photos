@@ -3,6 +3,7 @@ import cloudinary from "cloudinary";
 import MasnoryGrid from "./components/masnory-grid";
 import type { Metadata } from "next";
 import { SearchBar } from "./components/searchbar";
+import CloudinaryImage from "./components/cloudinary-image";
 
 export const metadata: Metadata = {
   title: "Gallery | Photos",
@@ -36,6 +37,23 @@ export default async function GalleryPage({
           </h1>
         </span>
         <MasnoryGrid imagesResult={imagesResult.resources} />
+        {/* {imagesResult.resources.map((image, idx) => (
+          <article key={idx} className="flex relative group pb-[15px] transition duration-300 flex-col items-center">
+            <CloudinaryImage
+              imageData={image}
+              tags={image.tags}
+              publicId={image.public_id}
+              // onUnheart={(unheartedImage: ImageResult) => {
+              //   updateImages((currentResources: ImageResult[]) =>
+              //     currentResources.filter(
+              //       (resource) =>
+              //         resource.public_id !== unheartedImage.public_id
+              //     )
+              //   );
+              // }}
+            />
+          </article>
+        ))} */}
       </Container>
     </main>
   );
