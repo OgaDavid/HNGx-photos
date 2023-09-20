@@ -1,9 +1,16 @@
 "use client";
 
 import Masonry from "react-masonry-css";
+import { GripVertical } from "lucide-react";
 import CloudinaryImage from "./cloudinary-image";
-import { DragDropContext, Droppable, Draggable, DropResult } from "react-beautiful-dnd";
+import {
+  DragDropContext,
+  Droppable,
+  Draggable,
+  DropResult,
+} from "react-beautiful-dnd";
 import { useEffect, useState } from "react";
+import Heart from "./heart";
 
 export default function MasnoryGrid({
   imagesResult,
@@ -15,6 +22,8 @@ export default function MasnoryGrid({
   useEffect(() => {
     updateImages(images);
   }, [imagesResult]);
+
+  //   reorder images on image drop
 
   const handleOnDragEnd = (result: DropResult) => {
     if (!result.destination) return;
@@ -28,7 +37,7 @@ export default function MasnoryGrid({
     updateImages(draggableImages);
   };
 
-  //   masnory breakpoints
+  //   Masnory grid breakpoints
   const breakpointColumns = {
     default: 5,
     1100: 4,
@@ -57,8 +66,14 @@ export default function MasnoryGrid({
                       {...provided.draggableProps}
                       {...provided.dragHandleProps}
                       ref={provided.innerRef}
-                      className="flex pb-[15px] flex-col items-center"
+                      className="flex relative group pb-[15px] transition duration-300 flex-col items-center"
                     >
+                      <span className="">
+                        <GripVertical className="absolute md:hidden md:group-hover:flex top-2 right-[6px] text-gray-50 opacity-50 w-6 h-6" />
+                      </span>
+                      <span>
+                        <Heart className="absolute top-2 p-1 bg-white bg-opacity-20 rounded-full left-2 text-gray-50 opacity-50 w-6 h-6" />
+                      </span>
                       <CloudinaryImage publicId={image.public_id} />
                     </article>
                   )}
