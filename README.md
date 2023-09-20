@@ -39,5 +39,8 @@ While adhering to the above requirements, you have the creative freedom to come 
 <br />
 <br />
 
-https://github.com/OgaDavid/HNGx-photos/assets/104001201/20c64c56-f4ee-4bcf-8b08-16aa55aff9c3
+
+
+https://github.com/OgaDavid/HNGx-photos/assets/104001201/82decdac-d144-41c9-b595-b3d1c505faae
+
 
