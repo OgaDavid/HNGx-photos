@@ -1,4 +1,4 @@
-import GalleryHeader from "./components/header";
+import GalleryHeader from "@/components/header";
 
 export default function RootLayout({
   children,
