@@ -54,12 +54,14 @@ export default async function GalleryPage({
             getColumns(4),
           ].map((column, idx) => (
             <section key={idx} className="flex flex-col gap-3">
-              {column.map((image) => (
+              {column.map((image, idx) => (
+                <span key={idx}>
                 <CloudinaryImage
                   imageData={image}
                   tags={image.tags}
                   publicId={image.public_id}
                 />
+                </span>
               ))}
             </section>
           ))}
