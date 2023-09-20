@@ -41,6 +41,5 @@ While adhering to the above requirements, you have the creative freedom to come 
 
 
 
-https://github.com/OgaDavid/HNGx-photos/assets/104001201/82decdac-d144-41c9-b595-b3d1c505faae
-
+https://github.com/OgaDavid/HNGx-photos/assets/104001201/7bcafab3-539e-470d-9276-d5ccc0b9001d
 
