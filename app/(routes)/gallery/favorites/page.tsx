@@ -15,7 +15,8 @@ export default async function FavoritesPage() {
     .sort_by("public_id", "desc")
     .with_field("tags")
     .max_results(30)
-    .execute()) as { resources: ImageResult[] };
+    .execute()) as { resources: ImageResult[] }
+
 
   return (
     <main>

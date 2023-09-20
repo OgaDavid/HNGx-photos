@@ -4,6 +4,8 @@ import { CldImage } from "next-cloudinary";
 import { useState, useTransition } from "react";
 import HeartFull from "./heart-full";
 import Heart from "./heart";
+import { GripVertical } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 export default function CloudinaryImage({
   publicId,
@@ -18,12 +20,18 @@ export default function CloudinaryImage({
 
   const [transition, startTransition] = useTransition();
 
+  const router = useRouter()
+
   return (
     <div className="relative">
+      <span>
+        <GripVertical className="absolute md:hidden md:group-hover:flex top-2 right-[6px] text-gray-50 opacity-50 w-6 h-6" />
+      </span>
       {isFavorited ? (
         <span
           onClick={() => {
             setIsFavorited(false);
+            router.refresh()
             startTransition(() => MarkAsFavorite(publicId, false));
           }}
         >

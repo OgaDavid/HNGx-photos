@@ -1,7 +1,6 @@
 "use client";
 
 import Masonry from "react-masonry-css";
-import { GripVertical } from "lucide-react";
 import CloudinaryImage from "./cloudinary-image";
 import {
   DragDropContext,
@@ -67,9 +66,6 @@ export default function MasnoryGrid({
                       ref={provided.innerRef}
                       className="flex relative group pb-[15px] transition duration-300 flex-col items-center"
                     >
-                      <span className="">
-                        <GripVertical className="absolute md:hidden md:group-hover:flex top-2 right-[6px] text-gray-50 opacity-50 w-6 h-6" />
-                      </span>
                       <CloudinaryImage
                         tags={image.tags}
                         publicId={image.public_id}
