@@ -25,7 +25,7 @@ export default async function FavoritesPage() {
             Showing {favoritesResult.resources.length} images.
           </h1>
         </span>
-        <MasnoryGrid path="/gallery/favorites" imagesResult={favoritesResult.resources} />
+        <MasnoryGrid imagesResult={favoritesResult.resources} />
       </Container>
     </main>
   );

@@ -9,20 +9,13 @@ import {
   Draggable,
   DropResult,
 } from "react-beautiful-dnd";
-import { useEffect, useState, useTransition } from "react";
-import Heart from "./heart";
-import { MarkAsFavorite } from "@/actions/mark-as-favorite";
-import HeartFull from "./heart-full";
+import { useEffect, useState } from "react";
 
 export default function MasnoryGrid({
   imagesResult,
-  path
 }: {
-  imagesResult: ImageResult[],
-  path: string
+  imagesResult: ImageResult[];
 }) {
-  const [transition, startTransition] = useTransition();
-
   const [images, updateImages] = useState(imagesResult);
 
   useEffect(() => {
@@ -77,28 +70,10 @@ export default function MasnoryGrid({
                       <span className="">
                         <GripVertical className="absolute md:hidden md:group-hover:flex top-2 right-[6px] text-gray-50 opacity-50 w-6 h-6" />
                       </span>
-                      {image.tags.includes("favorite") ? (
-                        <span
-                          onClick={() =>
-                            startTransition(() =>
-                              MarkAsFavorite(image.public_id, false, path)
-                            )
-                          }
-                        >
-                          <HeartFull className="absolute cursor-pointer top-2 p-1 text-red-600 bg-white bg-opacity-20 rounded-full left-2 w-6 h-6" />
-                        </span>
-                      ) : (
-                        <span
-                          onClick={() =>
-                            startTransition(() =>
-                              MarkAsFavorite(image.public_id, true, path)
-                            )
-                          }
-                        >
-                          <Heart className="absolute cursor-pointer top-2 p-1 bg-white bg-opacity-20 rounded-full left-2 text-gray-50 opacity-50 w-6 h-6" />
-                        </span>
-                      )}
-                      <CloudinaryImage publicId={image.public_id} />
+                      <CloudinaryImage
+                        tags={image.tags}
+                        publicId={image.public_id}
+                      />
                     </article>
                   )}
                 </Draggable>

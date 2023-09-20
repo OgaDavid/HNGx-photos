@@ -25,7 +25,7 @@ export default async function GalleryPage() {
             Showing {imagesResult.resources.length} images.
           </h1>
         </span>
-        <MasnoryGrid path="/gallery" imagesResult={imagesResult.resources} />
+        <MasnoryGrid imagesResult={imagesResult.resources} />
       </Container>
     </main>
   );
