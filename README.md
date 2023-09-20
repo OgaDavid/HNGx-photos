@@ -35,16 +35,9 @@ While adhering to the above requirements, you have the creative freedom to come 
 
 
 # Solution 🏆
-## Demo Link - https://moviebox-hngx.vercel.app/
+## Demo Link - https://hngx-photos.vercel.app/
 <br />
 <br />
 
-![Demo screen](https://github.com/OgaDavid/HNGx-Movie-Box/blob/master/public/images/sipderman%20mobile.png)
-<br />
-<br />
+![Demo video]()
 
-![Demo screen](https://github.com/OgaDavid/HNGx-Movie-Box/blob/master/public/images/spiderman%20laptop.png)
-<br />
-<br />
-
-![Demo screen](https://github.com/OgaDavid/HNGx-Movie-Box/blob/master/public/images/mobile%20(4).gif?raw=true)
