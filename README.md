@@ -39,5 +39,5 @@ While adhering to the above requirements, you have the creative freedom to come 
 <br />
 <br />
 
-![Demo video](https://github.com/OgaDavid/HNGx-photos/blob/master/public/demo/photos-demo.mp4)
+![Demo video](https://github.com/OgaDavid/HNGx-photos/raw/master/public/demo/photos-demo.mp4)
 
