@@ -1,6 +1,12 @@
 import Container from "@/components/ui/container";
 import cloudinary from "cloudinary";
 import MasnoryGrid from "./components/masnory-grid";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Gallery | Photos",
+  description: "Check out your Gallery.",
+};
 
 export default async function GalleryPage() {
   // get images from Cloudinary
@@ -11,9 +17,6 @@ export default async function GalleryPage() {
     .max_results(30)
     .execute()) as { resources: ImageResult[] };
 
-  // console.log(imagesResult)
-
-
   return (
     <main>
       <Container>
@@ -22,7 +25,7 @@ export default async function GalleryPage() {
             Showing {imagesResult.resources.length} images.
           </h1>
         </span>
-        <MasnoryGrid imagesResult={imagesResult.resources} />
+        <MasnoryGrid path="/gallery" imagesResult={imagesResult.resources} />
       </Container>
     </main>
   );

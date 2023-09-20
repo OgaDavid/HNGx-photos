@@ -16,8 +16,10 @@ import HeartFull from "./heart-full";
 
 export default function MasnoryGrid({
   imagesResult,
+  path
 }: {
-  imagesResult: ImageResult[];
+  imagesResult: ImageResult[],
+  path: string
 }) {
   const [transition, startTransition] = useTransition();
 
@@ -79,7 +81,7 @@ export default function MasnoryGrid({
                         <span
                           onClick={() =>
                             startTransition(() =>
-                              MarkAsFavorite(image.public_id, false)
+                              MarkAsFavorite(image.public_id, false, path)
                             )
                           }
                         >
@@ -89,7 +91,7 @@ export default function MasnoryGrid({
                         <span
                           onClick={() =>
                             startTransition(() =>
-                              MarkAsFavorite(image.public_id, true)
+                              MarkAsFavorite(image.public_id, true, path)
                             )
                           }
                         >
