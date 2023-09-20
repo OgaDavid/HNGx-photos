@@ -13,9 +13,11 @@ export default function GalleryHeader() {
     <div className="pt-[68px] border-b border-b-gray-100 mb-3 pb-3">
       <Container>
         <div className="flex items-center gap-2 justify-between">
-          <span className="flex items-center gap-1">
-            <Image className="w-6 h-6" />
-            <h1 className="text-xl md:text-2xl font-bold">Gallery</h1>
+          <span>
+            <Link className="flex items-center gap-1" href="/gallery">
+              <Image className="w-6 h-6" />
+              <h1 className="text-xl md:text-2xl font-bold">Gallery</h1>
+            </Link>
           </span>
           <span></span>
           <span>
