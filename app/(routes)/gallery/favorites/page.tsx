@@ -1,10 +1,10 @@
 import Container from "@/components/ui/container";
 import React from "react";
 
-export default function FavouritesPage() {
+export default function FavoritesPage() {
   return (
     <main>
-      <Container>Favourites</Container>
+      <Container>Favorites</Container>
     </main>
   );
 }

@@ -7,6 +7,7 @@ export default async function GalleryPage() {
   const imagesResult = (await cloudinary.v2.search
     .expression("resource_type:image AND folder=photos")
     .sort_by("public_id", "desc")
+    .with_field("tags")
     .max_results(30)
     .execute()) as { resources: ImageResult[] };
 
@@ -18,7 +19,7 @@ export default async function GalleryPage() {
       <Container>
         <span>
           <h1 className="text-base py-5 md:text-xl font-semibold">
-            Showing {imagesResult.resources.length} images
+            Showing {imagesResult.resources.length} images.
           </h1>
         </span>
         <MasnoryGrid imagesResult={imagesResult.resources} />
